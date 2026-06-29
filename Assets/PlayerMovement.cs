@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
+    //[SerializeField] private Transform GFX;
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform feetPos;
@@ -19,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, groundDistance, groundLayer);
     
+        //JUMPING
+        #region JUMPING
+
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             isJumping = true;
@@ -44,5 +48,7 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
             jumpTimer = 0;
         }
+
+        #endregion
     }
 }
