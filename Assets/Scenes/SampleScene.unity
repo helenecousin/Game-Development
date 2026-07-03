@@ -160,10 +160,10 @@ GameObject:
   m_Component:
   - component: {fileID: 489355030}
   - component: {fileID: 489355029}
-  - component: {fileID: 489355031}
   - component: {fileID: 489355033}
   - component: {fileID: 489355032}
   - component: {fileID: 489355034}
+  - component: {fileID: 489355035}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -214,26 +214,6 @@ Transform:
   - {fileID: 431502383}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &489355031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489355028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b62c55b872b16ff4dbc54516cd6eda31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  rb: {fileID: 489355029}
-  jumpForce: 10
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  feetPos: {fileID: 431502383}
-  groundDistance: 0.25
-  jumpTime: 0.3
 --- !u!212 &489355032
 SpriteRenderer:
   serializedVersion: 2
@@ -283,7 +263,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -254169148, guid: 48f786bb3656d214ea5f0da794936c33, type: 3}
+  m_Sprite: {fileID: -1382115465, guid: e95e0487b3b9dc744a33314e8ab4a312, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -361,6 +341,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.2, y: 0.15}
   m_EdgeRadius: 0
+--- !u!114 &489355035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489355028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e46938028ea0845946a27952ab747e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  rb: {fileID: 489355029}
+  jumpForce: 10
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  feetPos: {fileID: 431502383}
+  groundDistance: 0.25
+  jumpTime: 0.3
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
