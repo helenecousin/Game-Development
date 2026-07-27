@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlatformMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 6f;
-    [SerializeField] private float spawnX = -10f;
+    [SerializeField] private float spawnX = 0f;
     [SerializeField] private float destroyX = -20f;
 
     private bool hasSpawnedNext = false;
