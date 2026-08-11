@@ -2,20 +2,22 @@ using UnityEngine;
 
 public class PlayerCollection : MonoBehaviour
 {
-    private int score = 0;
+    //ingredients only contribute to potion meter (broom power-up)
+        
+    //number of ingredients needed to fill potion
+    [SerializeField] private int maxPotion = 10;
 
+    //number of ingredients player has collected
+    private int potionAmount = 0;
+
+    //function IngredientCollect script calls when player touches an ingredient
     public void CollectIngredient()
     {
+        if (potionAmount < maxPotion)
+        {
+            potionAmount++;
 
-        //defining the range limits
-        int minRange = 1;
-        int maxRange = 11;
-
-        int randomIncrement = UnityEngine.Random.Range(minRange, maxRange);
-        score += randomIncrement ;
-
-        //later on add broom mechanic here: potionAmount++; if (potionAmount >= potionMax){ActivateBroom();}
-
-        Debug.Log("Score: " + score + "(+ " + randomIncrement + ")");
+            Debug.Log("Potion: " + potionAmount + "/" + maxPotion);
+        }
     }
 }

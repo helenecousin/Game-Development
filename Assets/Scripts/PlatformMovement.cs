@@ -17,6 +17,11 @@ public class PlatformMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManager.Instance.isPlaying)
+        {
+            return;
+        }
+        
         // Moves the platform left
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 

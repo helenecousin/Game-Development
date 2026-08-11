@@ -9,7 +9,7 @@ public class PlayerCollision : MonoBehaviour
         if (other.transform.tag == "Obstacle")
         {
             Destroy(gameObject);
-            // GameManager set game over 
+            GameManager.Instance.GameOver(); 
         }
     }
 }
