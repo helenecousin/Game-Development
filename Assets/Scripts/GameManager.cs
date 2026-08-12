@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    [SerializeField] private GameObject Player;
+    [SerializeField] private Transform PlayerSpawnPoint;
+
     public float currentScore = 0f;
     public bool isPlaying = false;
 
@@ -31,6 +34,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown("k")) //temp game restart
         {
             isPlaying = true;
+            //if no player, create new one
+            if (GameObject.FindGameObjectWithTag("Player") == null)
+            {
+                Instantiate(Player, PlayerSpawnPoint.position, Quaternion.identity);
+            }
         }
     }
 
