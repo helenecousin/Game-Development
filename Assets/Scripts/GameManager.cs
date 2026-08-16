@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -60,6 +61,14 @@ public class GameManager : MonoBehaviour
         onGameOver.Invoke();
         currentScore = 0;
         isPlaying = false;
+    }
+
+    //completely reloads the current scene, used when player chooses to play again after gameover
+    public void RestartGame()
+    {
+        // loading the scene again destroys all spawned objects and restores
+        // every manually placed object to its original position
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public string PrettyScore () //rounds score to nearest integer and converts to a string

@@ -19,7 +19,13 @@ public class UIManager : MonoBehaviour
 
     public void PlayButtonHandler()
     {
+        startMenuUI.SetActive(false);
         gm.StartGame();
+    }
+
+    public void RestartButtonHandler()
+    {
+        gm.RestartGame();
     }
 
     public void ActivateGameOverUI()
