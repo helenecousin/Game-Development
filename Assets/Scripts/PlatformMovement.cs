@@ -2,9 +2,17 @@ using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
+    //the normal speed at which this platform set moves towards the left
     [SerializeField] private float moveSpeed = 6f;
+
+    // the X position at which this platform set creates the next platform
     [SerializeField] private float spawnX = 0f;
+
+    // once the platform reaches this X position, it is far enough off-screen
+    //that it can be destroyed to prevent unnecessary objects from remaining
+    //in the scene
     [SerializeField] private float destroyX = -20f;
+
 
     private bool hasSpawnedNext = false;
 
